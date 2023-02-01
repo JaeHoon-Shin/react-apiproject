@@ -10,13 +10,19 @@ import YugiInfo from './component/YugiInfo';
 import SingUp from './component/SingUp';
 import Qnalist from './component/Qnalist';
 import Modal from "react-modal";
+import Login from './component/Login';
 
 function App() {
-  const [isOpen, setOpen] = useState(false);
-  function handleClick(){
-    setOpen(true);
+  const [sinupOpen, setsinupOpen] = useState(false);
+  const [loginOpen, setloginOpen] = useState(false);
+
+  function loginOpenFn() {
+    setloginOpen(true);
   }
-  console.log(isOpen);
+  function singupOpenFn() {
+    setsinupOpen(true);
+
+  }
   return (
     <>
       <BrowserRouter>
@@ -25,8 +31,8 @@ function App() {
             <Link to="/"><img src='../img/logo.svg'></img></Link>
             <h2><Link to="/">구해줘 홈즈</Link></h2>
             <ul className='text-box'>
-              <li className='logout-box'><Link to="/login"><p>로그인</p></Link></li>
-              <li className='logout-box'><p onClick={handleClick}>회원가입</p></li>
+              <li className='logout-box'><p onClick={loginOpenFn}>로그인</p></li>
+              <li className='logout-box'><p onClick={singupOpenFn}>회원가입</p></li>
               <li className='login-box'><Link to="/logOut"><p>로그아웃</p></Link></li>
               <li className='login-box'><Link to="/myPage"><img src='../img/mypage.svg'></img></Link></li>
             </ul>
@@ -40,19 +46,20 @@ function App() {
             </ul>
           </div>
         </header>
-        <SingUp isOpen={isOpen}/>
+        <Login isOpen={loginOpen} setOpen={setloginOpen} setsinupOpen={setsinupOpen} />
+        <SingUp isOpen={sinupOpen} setOpen={setsinupOpen} />
         <Context>
           <main>
-            
+
             <Routes>
               <Route path='/' element={<Main />} />
-              <Route path='/AnimalHomes' element={<AnimalHomes/>}></Route>
-              <Route path='/Yugilist' element={<Yugilist/>}></Route>
+              <Route path='/AnimalHomes' element={<AnimalHomes />}></Route>
+              <Route path='/Yugilist' element={<Yugilist />}></Route>
               {/* <Route path='/SingUp'element={<SingUp/>}></Route> */}
               <Route path='/AnimalInfo/:id' element={<AnimalInfo />}></Route>
               <Route path='/YugiInfo/:id' element={<YugiInfo />}></Route>
               <Route path='/Qnalist' element={<Qnalist />}></Route>
-              
+
             </Routes>
           </main>
         </Context>
@@ -61,7 +68,7 @@ function App() {
       <footer>
         <div className='footer-container'>
 
-            내용 들어갈 자리
+          내용 들어갈 자리
 
         </div>
 

@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react'
 import ReactModal from 'react-modal';
 
-const SingUp = ({isOpen}) => {
+const SingUp = ({isOpen,setOpen}) => {
     const [subEmail, setSub] = useState();
     const subEmailEl = useRef();
     const [tell, setTell] = useState();
@@ -42,11 +42,13 @@ const SingUp = ({isOpen}) => {
             setTellMessage('올바른 형태가 아닙니다.')
         }
     }
+    const closeSinupFn =()=>{
+        setOpen(false);
+    }
 
     return (
         <ReactModal isOpen={isOpen}>
-            <div className='SingUp-back'>
-                <section className='SingUp-container'>
+            
                     <div className='form-box'>
                         <p>회원가입</p>
                         <form onSubmit={handleSubmit} >
@@ -74,13 +76,13 @@ const SingUp = ({isOpen}) => {
                             </div>
                             <div className='btn-box'>
                                 <button type='submit' value='제출하기'>가입</button>
-                                <button >취소</button>
+                                <button onClick={closeSinupFn}>취소</button>
                             </div>
                         </form>
                     </div>
-                </section>
+                
 
-            </div>
+            
             </ReactModal>
     )
 }

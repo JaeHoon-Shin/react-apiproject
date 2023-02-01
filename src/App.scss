@@ -60,9 +60,11 @@ header {
 
             >li {
                 padding-left: 30px;
-                >p{
+
+                >p {
                     cursor: pointer;
                 }
+
                 &.login-box {
                     display: none;
                 }
@@ -267,7 +269,7 @@ main {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: center;
 
             >article {
 
@@ -293,6 +295,10 @@ main {
                             >button {
                                 position: absolute;
                                 right: 0;
+
+                                >a {
+                                    color: #fff;
+                                }
                             }
                         }
 
@@ -300,7 +306,7 @@ main {
 
 
                     >ul {
-                        margin: 0 100px;
+                        margin: 0 70px;
 
                         >a {
                             >li {
@@ -378,109 +384,293 @@ main {
         }
     }
 
-    //회원가입 css
-    >.SingUp-back {
-        width: 600px;
-        margin: 0 auto;
+    //유기동물 개인정보 css
+    >.yugi-info-container {
+        padding: 0 150px;
 
-        button {
-            all: unset;
-            text-align: center;
-            cursor: pointer;
-            color: white;
-            background-color: #70A0FC;
-            border-radius: 3px;
-            font-size: 14px;
+        >p {
+            font-size: 24px;
+            margin: 50px 0;
+            padding: 0 30px;
         }
 
-        >.SingUp-container {
-            margin: 25px;
+        >.info-content {
+            padding: 0 30px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
 
-            >.form-box {
-                padding: 20px;
-                border: 3px solid #E9E5E5;
-                border-radius: 10px;
+            >.img-box {
+                width: 48%;
 
-                >p {
-                    font-size: 20px;
-                    font-weight: bold;
-                    margin-bottom: 20px;
-                }
-
-                >form {
-                    display: flex;
-                    flex-direction: column;
+                img {
                     width: 100%;
 
-                    input {
-                        margin-top: 20px;
-                        width: 100%;
-                        height: 50px;
-                        outline: none;
-                        font-size: 20px;
-                    }
+                }
+            }
 
-                    >input[type='text'] {}
+            >.text-box {
+                width: 48%;
+                align-items: center;
 
-                    >.id_box {
-                        position: relative;
+                >ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
 
-                        >input[type='text'] {
-                            margin-top: 0;
-                        }
-
-                        .but {
-                            position: absolute;
-                            position: absolute;
-                            width: 90px;
-                            height: 40px;
-                            top: 0;
-                            bottom: 0;
-                            right: 5px;
-                            margin: auto 0;
-
-                        }
-                    }
-
-                    >.email-box {
-                        display: flex;
-                        width: 100%;
-                        margin-top: 20px;
-
-                        >input[type='text'] {
-                            width: 40%;
-                            margin-top: 0px;
-                        }
+                    >li {
+                        text-align: center;
+                        width: 50%;
 
                         >p {
-                            
-                            font-size: 20px;
-                            margin: auto;
+                            margin: 10px 0;
+                            font-size: 22px;
                         }
 
-                        >select {
-                            
-                            margin-left: 20px;
+                        >.img-list {
+                            display: flex;
 
-                        }
-                    }
+                            flex-wrap: wrap;
 
-                    >.btn-box {
-                        display: flex;
-                        margin: 20px auto;
-                        >button {
-                            width: 100px;
-                            margin: 0 5px;
-                            height: 40px;
+                            >p {
+                                width: 24%;
+                                margin-left: 0.5%;
+
+                                >img {
+                                    width: 100%;
+                                }
+
+                                &:nth-child(4n) {
+                                    margin-left: 0;
+                                }
+                            }
                         }
                     }
                 }
 
+
+            }
+
+        }
+
+        >.question-box {
+            margin-top: 100px;
+            padding: 0 30px;
+
+            >p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            >table {
+                width: 100%;
+                border-spacing :0px;
+                border-collapse: collapse;
+                >tbody {
+                    border-top: 1px solid #d4d0d0;
+                    >tr {
+                        height: 50px;
+                        border-bottom: 1px solid #d4d0d0;
+                        >th {
+                            width: 15%;
+                            background-color: #f6f6f6;
+                        }
+                        >td {
+                            width: 30%;
+                            padding-left : 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        >a {
+            >button {
+                all: unset;
+                text-align: center;
+                margin: 0 auto;
+                display: block;
+                width: 120px;
+                height: 70px;
+                font-size: 16px;
+                line-height: 150%;
+                background: no-repeat;
+                background-size: contain;
+                background-position: center;
+                /*  transform: translate(50% ,50%); */
+                cursor: pointer;
             }
         }
     }
-    >.qna-container{
+
+    >.qna-container {
         padding: 0 100px
+    }
+}
+
+
+
+body {
+
+    //modal css
+    >.ReactModalPortal {
+        >.ReactModal__Overlay--after-open {
+            >.ReactModal__Content--after-open {
+                all: unset;
+                width: 600px;
+                margin: 150px auto;
+                height: 580px;
+
+                button {
+                    all: unset;
+                    text-align: center;
+                    cursor: pointer;
+                    color: white;
+                    background-color: #70A0FC;
+                    border-radius: 15px;
+                    font-size: 14px;
+                }
+
+                //회원가입 css
+                >.form-box {
+                    padding: 20px;
+
+                    >p {
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                    }
+
+                    >form {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        input {
+                            margin-top: 20px;
+                            width: 100%;
+                            height: 50px;
+                            outline: none;
+                            font-size: 15px;
+                            border: 1px solid #e4dddd;
+                            border-radius: 15px;
+                        }
+
+                        input::placeholder {
+                            padding-left: 5px;
+                        }
+
+                        >.id_box {
+                            position: relative;
+
+                            >input[type='text'] {
+                                margin-top: 0;
+                            }
+
+                            .but {
+                                position: absolute;
+                                width: 90px;
+                                height: 40px;
+                                top: 0;
+                                bottom: 0;
+                                right: 5px;
+                                margin: auto 0;
+                            }
+                        }
+
+                        >.email-box {
+                            display: flex;
+                            width: 100%;
+                            margin-top: 20px;
+
+                            >input[type='text'] {
+                                width: 40%;
+                                margin-top: 0px;
+                            }
+
+                            >p {
+
+                                font-size: 15px;
+                                margin: auto;
+                            }
+
+                            >select {
+                                margin-left: 20px;
+                            }
+                        }
+
+                        >.btn-box {
+                            display: flex;
+                            margin: 20px auto;
+
+                            >button {
+                                width: 100px;
+                                margin: 0 5px;
+                                height: 40px;
+                            }
+
+                        }
+                    }
+                }
+
+                //로그인 css
+                >.login-PopUp {
+                    >p {
+                        text-align: end;
+                        cursor: pointer;
+                        font-size: 15px;
+                    }
+
+                    >h3 {
+                        font-size: 36px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin: 100px 0;
+                    }
+
+                    >.input-box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        >input {
+                            width: 50%;
+                            height: 50px;
+                            margin-bottom: 15px;
+                            border: 2px solid #E9E5E5;
+                            border-radius: 25px;
+                            outline: none;
+                            font-size: 15px;
+                        }
+
+                        input::placeholder {
+                            padding-left: 5px;
+                        }
+
+                    }
+
+                    >.button-box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            width: 50%;
+                            height: 50px;
+                            border-radius: 25px;
+                            outline: none;
+                            margin-bottom: 15px;
+                            font-size: 15px;
+
+                            &:nth-child(1) {
+                                background-color: #E9E5E5;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

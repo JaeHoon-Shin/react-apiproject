@@ -10,7 +10,6 @@ const Main = () => {
     const ColorButton = styled(Button)({
         width: '50px',
         height: '20px',
-
         color: '#ffffff',
         boxShadow: 'none',
         textTransform: 'none',

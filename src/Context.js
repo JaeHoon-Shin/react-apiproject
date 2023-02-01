@@ -48,6 +48,7 @@ const Context = ({ children }) => {
             obj.happenDt = obj.happenDt.substring(0, 4) + "년" + obj.happenDt.substring(4, 6) + "월" + obj.happenDt.substring(6, 8) + "일";
             obj.kindCd = two[0];
             obj.BREEDS = two[1];
+            obj.sexCd == 'M' ? obj.sexCd ='남아' : obj.sexCd == 'F' ? obj.sexCd ='여아' : obj.sexCd ='미상'
         })
         if(num==''){
             setYugiList(yugi);
