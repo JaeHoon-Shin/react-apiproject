@@ -11,10 +11,17 @@ import SingUp from './component/SingUp';
 import Qnalist from './component/Qnalist';
 import Modal from "react-modal";
 import Login from './component/Login';
+import axios from 'axios';
 
 function App() {
   const [sinupOpen, setsinupOpen] = useState(false);
   const [loginOpen, setloginOpen] = useState(false);
+
+
+ /*   useEffect(()=>{
+    axios.get("http://localhost:4000/").then(res=>console.log(res)).catch();
+  },[])  */
+
 
   function loginOpenFn() {
     setloginOpen(true);
